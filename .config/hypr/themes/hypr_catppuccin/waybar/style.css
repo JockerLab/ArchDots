@@ -1,0 +1,136 @@
+* {
+    font-family: JetBrainsMono, Symbols Nerd Font;
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 0;
+}
+
+@define-color bg #1e1e2e;
+@define-color bg2 #181825;
+@define-color fg #cdd6f4;
+@define-color pink #f5c2e7;
+@define-color green #a6e3a1;
+@define-color fl #f2cdcd;
+@define-color blue #89b4fa;
+@define-color red #eba0ac;
+@define-color vl #cba6f7;
+@define-color yellow #fab387;
+
+window#waybar {
+    border-radius: 20;
+    background-color: @bg;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    color: @fg;
+    background-color: @bg2;
+    margin: 2px 5px;
+    padding: 0 5px;
+    border-radius: 15px;
+	border: none;
+}
+
+.modules-left {
+    padding: 0;
+}
+
+.modules-center {
+    padding: 0 10px;
+}
+
+/* Общие стили для всех модулей */
+#workspaces,
+#window,
+#tray,
+#language,
+#pulseaudio,
+#network,
+#bluetooth,
+#battery,
+#clock,
+#custom-power,
+#custom-blue-light-filter {
+    padding: 2px 10px;
+    border: none;
+}
+
+/* Общие hover-эффекты */
+#workspaces button:hover,
+#language:hover,
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#clock:hover,
+#custom-power:hover,
+#custom-blue-light-filter:hover {
+    color: @yellow;
+}
+
+/* Кнопки Workspaces */
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px transparent;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+	color: @fg;
+}
+
+/* Состояния PulseAudio */
+#pulseaudio.muted {
+    color: @red;
+}
+
+/* Состояния батареи */
+#battery.charging {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @yellow;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+}
+
+/* Кастомные элементы */
+#custom-power {
+    color: @pink;
+}
+
+#custom-power:hover {
+    color: @red;
+}
+
+#custom-blue-light-filter {
+    transition: color 0.3s ease;
+}
+
+window#waybar.empty #window,
+window#waybar.empty .modules-center {
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    border: none;
+    background-color: transparent;
+}
+
+/* Tooltip */
+tooltip {
+    background: @bg;
+    margin: 20px;
+    padding: 15px;
+    border: 20px solid rgba(100, 114, 125, 0);
+    border-radius: 10px;
+}

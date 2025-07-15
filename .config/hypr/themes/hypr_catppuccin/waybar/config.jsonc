@@ -1,0 +1,151 @@
+// -*- mode: jsonc -*-
+{
+	"layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+	"height": 25,
+	//"width": 2880,
+	"margin-top": 10,
+
+	"modules-left": [
+		"hyprland/workspaces"
+	],
+	"modules-center": [
+		"hyprland/window"
+	],
+	"modules-right": [
+		"tray",
+		"network",
+		"bluetooth",
+		"pulseaudio",
+		"battery",
+		"custom/blue-light-filter",
+		"clock",
+		"hyprland/language",
+		"custom/power"
+	],
+
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"urgent": "",
+			"active": "",
+			"default": ""
+		},
+		"tooltip": false
+	},
+
+	"hyprland/window": {
+		"format": "{class}",
+		"separate-outputs": false,
+		"rewrite": {
+			"code-oss": "VS Code",
+			"org.kde.dolphin": "Dolphin"
+		}
+	},
+
+	"tray": {
+		"icon-size": 18,
+		"spacing": 10
+	},
+
+	"network": {
+		"tooltip": true,
+		"format-wifi": "",
+		"rotate": 0,
+		"format-ethernet": "󰈀",
+		"tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+		"format-linked": "󰈀 {ifname} (No IP)",
+		"format-disconnected": "󰖪",
+		"tooltip-format-disconnected": "Disconnected",
+		"on-click": "kitty -e 'nmtui'"
+	},
+
+	"bluetooth": {
+		"format-on": "󰂯",
+		"format-off": "BT-off",
+		"format-disabled": "󰂲",
+		"format-connected-battery": "{device_battery_percentage}% 󰂯",
+		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+		"tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+		"on-click": "blueman-manager",
+	}, 
+    
+	"pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+	"battery": {
+        "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}%",
+		// "format-charging": "<span font='Font Awesome 5 Free 11' color='#A6E3A1'>{icon}</span>  {capacity}%",
+		// "format-warning": "<span font='Font Awesome 5 Free 11' color='#fab387'>{icon}</span>  {capacity}%",
+		// "format-critical": "<span font='Font Awesome 5 Free 11' color='#eba0ac'>{icon}</span>  {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+		"interval": 30,
+        "tooltip": false
+    },
+
+	"custom/blue-light-filter": {
+		"format": "{}",
+		"return-type": "json",
+		"exec": "~/.config/hypr/themes/hypr_catppuccin/waybar/scripts/blue_ligth_filter",
+		"on-click": "~/.config/hypr/themes/hypr_catppuccin/waybar/scripts/blue_ligth_filter  --click",
+		"signal": 2
+	},
+
+	"clock": {
+		"format": "{:%H:%M}",
+		"tooltip-format": "<big><span color='#cdd6f4'>{:%Y %B}</span></big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "{:%Y-%m-%d}",
+
+        "calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"weeks-pos": "right",
+			"on-scroll": 1,
+			"format": {
+				"months": "<span color='#cdd6f4'><b>{}</b></span>",
+				"days": "<span color='#cdd6f4'><b>{}</b></span>",
+				"weeks": "<span color='#f5c2e7'><b>W{}</b></span>",
+				"weekdays": "<span color='#f5c2e7'><b>{}</b></span>",
+				"today": "<span color='#eba0ac'><b><u>{}</u></b></span>"
+			}
+		},
+        "actions":  {
+			"on-click-right": "mode",
+			"on-click-forward": "tz_up",
+			"on-click-backward": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down"
+		}
+	},
+
+	"hyprland/language": {
+		"format": "{}",
+		"format-en": "EN",
+		"format-ru": "RU",
+		"keyboard-name": "at-translated-set-2-keyboard",
+		"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+	},
+
+	"custom/power": {
+		"format": "{}",
+		"format-icons": " ",
+		"on-click": "wlogout -b 4 --layout ~/.config/wlogout/layout --protocol layer-shell"
+	}
+}

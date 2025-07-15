@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Определяем текущее состояние
+filter_state=$(hyprshade current)
+
+# Обработка клика
+if [[ "$1" == "--click" ]]; then
+    if [ "$filter_state" = 'blue-light-filter' ]; then
+        hyprshade off &> /dev/null
+    else
+        hyprshade on blue-light-filter &> /dev/null
+    fi
+    # Обновляем состояние
+    filter_state=$(hyprshade current)
+    pkill -RTMIN+2 waybar  # Принудительное обновление модуля
+fi
+
+# Возвращаем JSON для Waybar
+if [ "$filter_state" = 'blue-light-filter' ]; then
+    echo '{"text": "", "tooltip": "Blue Light Filter: ON"}'
+else
+    echo '{"text": "", "tooltip": "Blue Light Filter: OFF"}'
+fi

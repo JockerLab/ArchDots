@@ -1,0 +1,24 @@
+{
+    "label" : "lock",
+    "action" : "hyprlock -c ~/.config/hypr/themes/hypr_catppuccin/hyprlock.conf",
+    "text" : "Lock",
+    "keybind" : "l"
+}
+{
+    "label" : "logout",
+    "action" : "hyprctl exit",
+    "text" : "Logout",
+    "keybind" : "e"
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "Reboot",
+    "keybind" : "r"
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "Shutdown",
+    "keybind" : "s"
+}
