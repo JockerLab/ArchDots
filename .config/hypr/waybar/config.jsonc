@@ -18,13 +18,14 @@
 	],
 	"modules-right": [
 		"tray",
+		"custom/vpn",
 		"network",
 		"bluetooth",
 		"pulseaudio",
 		"battery",
 		"custom/blue-light-filter",
 		"clock",
-		"hyprland/language",
+		"custom/language",
 		"custom/power"
 	],
 
@@ -51,6 +52,13 @@
 	"tray": {
 		"icon-size": 18,
 		"spacing": 10
+	},
+
+	"custom/vpn": {
+		"exec": "echo '{\"text\": \"󰒃\", \"tooltip\": \"WireGuard wg0 active\"}'",
+		"exec-if": "ip link show wg0 &>/dev/null",
+		"return-type": "json",
+		"interval": 3
 	},
 
 	"network": {
@@ -103,8 +111,8 @@
 	"custom/blue-light-filter": {
 		"format": "{}",
 		"return-type": "json",
-		"exec": "~/.config/hypr/themes/hypr_catppuccin/waybar/scripts/blue_ligth_filter",
-		"on-click": "~/.config/hypr/themes/hypr_catppuccin/waybar/scripts/blue_ligth_filter  --click",
+		"exec": "~/.config/hypr/waybar/scripts/blue_ligth_filter",
+		"on-click": "~/.config/hypr/waybar/scripts/blue_ligth_filter  --click",
 		"signal": 2
 	},
 
@@ -135,11 +143,11 @@
 		}
 	},
 
-	"hyprland/language": {
-		"format": "{}",
-		"format-en": "EN",
-		"format-ru": "RU",
-		"keyboard-name": "at-translated-set-2-keyboard",
+	"custom/language": {
+		"exec": "~/.config/hypr/waybar/scripts/language.sh",
+		"return-type": "json",
+		"interval": "once",
+		"signal": 4,
 		"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
 	},
 

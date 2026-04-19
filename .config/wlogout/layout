@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "hyprlock -c ~/.config/hypr/themes/hypr_catppuccin/hyprlock.conf",
+    "action" : "hyprlock -c ~/.config/hypr/hyprlock.conf",
     "text" : "Lock",
     "keybind" : "l"
 }

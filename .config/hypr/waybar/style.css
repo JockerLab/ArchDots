@@ -44,8 +44,9 @@ window#waybar {
 #workspaces,
 #window,
 #tray,
-#language,
+#custom-language,
 #pulseaudio,
+#custom-vpn,
 #network,
 #bluetooth,
 #battery,
@@ -58,14 +59,20 @@ window#waybar {
 
 /* Общие hover-эффекты */
 #workspaces button:hover,
-#language:hover,
+#custom-language:hover,
 #pulseaudio:hover,
+#custom-vpn:hover,
 #network:hover,
 #bluetooth:hover,
 #clock:hover,
 #custom-power:hover,
 #custom-blue-light-filter:hover {
     color: @yellow;
+}
+
+/* VPN active indicator */
+#custom-vpn {
+    color: @green;
 }
 
 /* Кнопки Workspaces */
