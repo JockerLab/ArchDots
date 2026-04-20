@@ -156,6 +156,6 @@
 	"custom/power": {
 		"format": "{}",
 		"format-icons": " ",
-		"on-click": "wlogout -b 4 --layout ~/.config/wlogout/layout --protocol layer-shell"
+		"on-click": "wlogout -b 4 --layout ~/.config/wlogout/layout --css ~/.config/wlogout/style.css --protocol layer-shell"
 	}
 }

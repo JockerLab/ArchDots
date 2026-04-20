@@ -4,6 +4,8 @@ Arch Linux dotfiles for Hyprland — Catppuccin Mocha theme.
 
 ![Screenshot](screenshot.png)
 
+![wlogout](screenshot-wlogout.png)
+
 ## Stack
 
 | Tool | Role |
