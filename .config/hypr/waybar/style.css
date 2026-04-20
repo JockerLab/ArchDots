@@ -5,8 +5,8 @@
     min-height: 0;
 }
 
-@define-color bg #1e1e2e;
-@define-color bg2 #181825;
+@define-color bg rgba(30, 30, 46, 0.7);
+@define-color bg2 rgba(24, 24, 37, 0.7);
 @define-color fg #cdd6f4;
 @define-color pink #f5c2e7;
 @define-color green #a6e3a1;

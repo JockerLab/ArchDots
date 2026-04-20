@@ -361,6 +361,15 @@ Uses `pactl` for audio, `brightnessctl` for brightness, `notify-send` with dunst
 | `XF86AudioPrev` | Previous track |
 | `XF86AudioPlay` / `XF86AudioPause` | Play/Pause |
 
+### Screenshots
+
+| Hotkey | Action |
+|--------|--------|
+| `Print` | Full screen → clipboard |
+| `Shift + Print` | Select area → clipboard |
+| `Super + Print` | Full screen → save to ~/Pictures/Screenshots/ |
+| `Super + Shift + Print` | Select area → save to ~/Pictures/Screenshots/ |
+
 ---
 
 ## Dunst Shortcuts

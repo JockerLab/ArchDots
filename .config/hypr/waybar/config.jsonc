@@ -8,7 +8,9 @@
     "gtk-layer-shell": true,
 	"height": 25,
 	//"width": 2880,
-	"margin-top": 10,
+	"margin-top": 6,
+	"margin-left": 6,
+	"margin-right": 6,
 
 	"modules-left": [
 		"hyprland/workspaces"
