@@ -327,6 +327,24 @@ Uses `pactl` for audio, `brightnessctl` for brightness, `notify-send` with dunst
 | `Super + ↑` | Move focus up |
 | `Super + ↓` | Move focus down |
 
+### Move Window
+
+| Hotkey | Action |
+|--------|--------|
+| `Super + Shift + ←` | Move window left (swap in tiling / move in floating) |
+| `Super + Shift + →` | Move window right |
+| `Super + Shift + ↑` | Move window up |
+| `Super + Shift + ↓` | Move window down |
+
+### Resize Window (floating)
+
+| Hotkey | Action |
+|--------|--------|
+| `Super + Alt + ←` | Shrink width by 40px |
+| `Super + Alt + →` | Grow width by 40px |
+| `Super + Alt + ↑` | Shrink height by 40px |
+| `Super + Alt + ↓` | Grow height by 40px |
+
 ### Workspaces
 
 | Hotkey | Action |
