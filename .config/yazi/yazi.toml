@@ -1,2 +1,15 @@
 [manager]
 show_hidden = true
+
+[opener]
+vscode = [
+    { run = 'code-oss %s', orphan = true, desc = "VS Code" }
+]
+
+[open]
+rules = [
+    { mime = "text/*",        use = ["vscode", "edit"] },
+    { mime = "application/*", use = ["vscode", "edit"] },
+    { mime = "inode/directory", use = ["vscode"] },
+    { mime = "*",             use = ["vscode", "open", "edit"] },
+]
