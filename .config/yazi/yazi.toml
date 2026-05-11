@@ -5,11 +5,13 @@ show_hidden = true
 vscode = [
     { run = 'code-oss %s', orphan = true, desc = "VS Code" }
 ]
+open = [
+    { run = 'xdg-open "$1"', desc = "Open", for = "linux" },
+]
 
 [open]
 rules = [
-    { mime = "text/*",        use = ["vscode", "edit"] },
-    { mime = "application/*", use = ["vscode", "edit"] },
-    { mime = "inode/directory", use = ["vscode"] },
+    { mime = "text/*",        use = ["edit", "vscode"] },
+    { mime = "application/*", use = ["edit", "vscode"] },
     { mime = "*",             use = ["vscode", "open", "edit"] },
 ]
